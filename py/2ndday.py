@@ -37,6 +37,7 @@ automation. The syntax is clean and readable.
 This makes Python perfect for beginners and experts alike."""
 word_count = len(text_Exercise.split())
 character_count = len(text_Exercise)
-sentence_count = text_Exercise.count('.') + text_Exercise.count("!")
-print(f" The text contains {word_count} words,{character_count} characters and {sentence_count} sentences.")
+character_count_no_spaces = len(text_Exercise.replace(' ',''))
+sentence_count = text_Exercise.count('.') + text_Exercise.count("!") + text_Exercise.count("?")
+print(f" The text contains {word_count} words,{character_count} characters,{character_count_no_spaces} characters with no spaces and {sentence_count} sentences.")
 
