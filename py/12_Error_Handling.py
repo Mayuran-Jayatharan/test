@@ -18,12 +18,25 @@ except FileNotFoundError:
 else:
     # Executes if no exception occured 
     content = file.read()
-    print("File read successfully")
+    print(f"File read successfully: {content}")
 finally:
     # Always executes
     if 'file' in locals() and not file.closed:
         file.close()
     print("Cleanup completed")
+
+# Raising exceptions
+def validate_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative")
+    if age > 150:
+        raise ValueError("Age seems unrealistic")
+    return True
+
+try: 
+    validate_age(152)
+except ValueError as e:
+    print(f"Validation error: {e}")
 
 
 
